@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Essay Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../assets/vendor/slick-carousel/slick/slick.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
           <div>
             <button type="button" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" src="avatar.jpg" alt="User Avatar">
+              <img class="h-8 w-8 rounded-full" src="../pic.png" alt="User Avatar">
               <span class="ml-2 text-white font-medium">John Doe</span>
               <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
@@ -39,7 +39,7 @@
             </button>
           </div>
           <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 group-hover:block" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-            <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+            <a href="dashboard/dashboard.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
             <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</a>
           </div>
         </div>
@@ -55,7 +55,7 @@
     </div>
   </div>
   <!-- Mobile menu -->
-  <div class="hidden sm:hidden" id="mobile-menu">
+  <div class=" sm:hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
       <a href="/services" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
@@ -71,7 +71,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <!-- Card 1 -->
             <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="pic.png" alt="Card 1" class="w-full">
+                <img src="../pic.png" alt="Card 1" class="w-full">
                 <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">Title of Card 1</h3>
                 <p class="text-gray-600 mb-2">Author: John Doe</p>
@@ -80,7 +80,7 @@
             </div>
             <!-- Card 2 -->
             <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="pic.png" alt="Card 2" class="w-full">
+                <img src="../pic.png" alt="Card 2" class="w-full">
                 <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">Title of Card 2</h3>
                 <p class="text-gray-600 mb-2">Author: Jane Smith</p>
@@ -89,7 +89,7 @@
             </div>
             <!-- Card 3 -->
             <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="pic.png" alt="Card 3" class="w-full">
+                <img src="../pic.png" alt="Card 3" class="w-full">
                 <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">Title of Card 3</h3>
                 <p class="text-gray-600 mb-2">Author: James Johnson</p>
@@ -98,7 +98,7 @@
             </div>
             <!-- Card 4 -->
             <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="pic.png" alt="Card 4" class="w-full">
+                <img src="../pic.png" alt="Card 4" class="w-full">
                 <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">Title of Card 4</h3>
                 <p class="text-gray-600 mb-2">Author: Emily Brown</p>
@@ -119,7 +119,7 @@
         <!-- Post 1 -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
           <div class="flex">
-            <img src="pic.png" alt="Post 1" class="w-1/3">
+            <img src="../pic.png" alt="Post 1" class="w-1/3">
             <div class="p-4 flex flex-col justify-between">
               <div>
                 <h3 class="text-xl font-semibold mb-2">Title of Post 1</h3>
@@ -135,7 +135,7 @@
         <!-- Post 2 -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden mt-6">
           <div class="flex">
-            <img src="pic.png" alt="Post 2" class="w-1/3">
+            <img src="../pic.png" alt="Post 2" class="w-1/3">
             <div class="p-4 flex flex-col justify-between">
               <div>
                 <h3 class="text-xl font-semibold mb-2">Title of Post 2</h3>
