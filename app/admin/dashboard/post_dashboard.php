@@ -78,7 +78,7 @@
   
   <!-- New Post Button -->
   <div class="mt-6">
-    <a href="#" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">New Post</a>
+    <button class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded" onclick="newPost()">New Post</button>
   </div>
   
   <!-- Posts Table -->
@@ -126,7 +126,7 @@
 </div>
 
 
-    <div class="container mx-auto px-4">
+      <div class="hidden container mx-auto px-4" id="newPost">
         <h2 class="text-2xl font-semibold mt-6">New Post</h2>
         
         <!-- New Post Form -->
@@ -155,40 +155,46 @@
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Submit</button>
             </div>
         </form>
-        </div>
+      </div>
 
-        <div class="container mx-auto px-4">
-  <h2 class="text-2xl font-semibold mt-6">Edit Post</h2>
-  
-  <!-- Edit Form -->
-  <form class="mt-6">
-    <div class="mb-4">
-      <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
-      <input type="text" id="title" name="title" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter title" value="Lorem ipsum dolor sit amet">
+    <div class="hidden container mx-auto px-4">
+      <h2 class="text-2xl font-semibold mt-6">Edit Post</h2>
+      
+      <!-- Edit Form -->
+      <form class="mt-6">
+        <div class="mb-4">
+          <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
+          <input type="text" id="title" name="title" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter title" value="Lorem ipsum dolor sit amet">
+        </div>
+        
+        <div class="mb-4">
+          <label for="author" class="block text-gray-700 text-sm font-bold mb-2">Author</label>
+          <input type="text" id="author" name="author" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter author" value="John Doe">
+        </div>
+        
+        <div class="mb-4">
+          <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Topic</label>
+          <input type="text" id="category" name="category" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter category" value="Technology">
+        </div>
+        
+        <div class="mb-4">
+          <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Content</label>
+          <textarea id="mytextarea" name="content" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" rows="6" placeholder="Enter content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus elit nec ultrices commodo.</textarea>
+        </div>
+        
+        <div>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Update</button>
+        </div>
+      </form>
     </div>
-    
-    <div class="mb-4">
-      <label for="author" class="block text-gray-700 text-sm font-bold mb-2">Author</label>
-      <input type="text" id="author" name="author" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter author" value="John Doe">
-    </div>
-    
-    <div class="mb-4">
-      <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Topic</label>
-      <input type="text" id="category" name="category" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter category" value="Technology">
-    </div>
-    
-    <div class="mb-4">
-      <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Content</label>
-      <textarea id="editor" name="content" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" rows="6" placeholder="Enter content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus elit nec ultrices commodo.</textarea>
-    </div>
-    
-    <div>
-      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Update</button>
-    </div>
-  </form>
-</div>
 
 <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script src="https://cdn.tiny.cloud/1/tkwlgcaoer3w9zk8z1fto08efhmlrznhm0bb48ppf49dh2sg/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
 <script src="../../../assets/js/slick.js"></script>
 </body>
 </html>

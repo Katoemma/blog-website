@@ -12,3 +12,7 @@ ClassicEditor
 .catch( error => {
     console.log( error );
 } );
+
+function newPost(){
+    document.getElementById("newPost").style.display = "block";
+}
