@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ERROR | E_WARNING);
+
  include 'controllers/users.php';
 ?>
 <!DOCTYPE html>
