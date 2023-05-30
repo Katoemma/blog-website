@@ -1,5 +1,8 @@
 <?php
+
 session_start();
+error_reporting(E_ERROR | E_WARNING);
+
 $basePath = dirname(__DIR__); // The base path of the project
 include $basePath . '/database/db.php';
 include $basePath . '/helpers/validateUser.php';

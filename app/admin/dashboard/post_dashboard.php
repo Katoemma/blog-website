@@ -88,7 +88,7 @@
         <tr>
           <th class="py-2 px-4 border-b">Title</th>
           <th class="py-2 px-4 border-b">Author</th>
-          <th class="py-2 px-4 border-b">Category</th>
+          <th class="py-2 px-4 border-b">Topic</th>
           <th class="py-2 px-4 border-b">Date</th>
           <th class="py-2 px-4 border-b">Actions</th>
         </tr>
@@ -142,13 +142,13 @@
             </div>
             
             <div class="mb-4">
-            <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category</label>
+            <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Topic</label>
             <input type="text" id="category" name="category" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter category">
             </div>
             
             <div class="mb-4">
             <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Content</label>
-            <textarea id="content" name="content" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" rows="6" placeholder="Enter content"></textarea>
+            <textarea id="editor" name="newpost" class="w-full border border-gray-300 rounded-md px-3 py-6 focus:outline-none focus:border-blue-500" rows="6" placeholder="Enter content"></textarea>
             </div>
             
             <div>
@@ -173,13 +173,13 @@
     </div>
     
     <div class="mb-4">
-      <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category</label>
+      <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Topic</label>
       <input type="text" id="category" name="category" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter category" value="Technology">
     </div>
     
     <div class="mb-4">
       <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Content</label>
-      <textarea id="content" name="content" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" rows="6" placeholder="Enter content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus elit nec ultrices commodo.</textarea>
+      <textarea id="editor" name="content" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" rows="6" placeholder="Enter content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus elit nec ultrices commodo.</textarea>
     </div>
     
     <div>
@@ -188,6 +188,7 @@
   </form>
 </div>
 
-
+<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script src="../../../assets/js/slick.js"></script>
 </body>
 </html>

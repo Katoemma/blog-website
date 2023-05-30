@@ -1,5 +1,5 @@
 <?php
-session_start();
+include ('controllers/users.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +42,7 @@ session_start();
                   </svg>
                 </button>
               </div>
-              <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 group-hover:block" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+              <div class="hidden origin-top-right absolute right-0  w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 group-hover:block" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                 <?php if($_SESSION['admin']): ?>
                  
                   <a href="dashboard/dashboard.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
