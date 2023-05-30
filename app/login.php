@@ -1,4 +1,5 @@
 <?php
+ include 'controllers/users.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +20,11 @@
       <form action="login.php" method="POST">
         <div class="mb-4">
           <label for="email" class="block font-medium text-gray-700">Email</label>
-          <input id="email" type="email" name="email" placeholder="Enter your email" class="bg-gray-200 mt-1 px-4 py-2 w-full border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+          <input id="email" type="email" name="email" value="<?php echo $email ?>" placeholder="Enter your email" class="bg-gray-200 mt-1 px-4 py-2 w-full border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
         </div>
         <div class="mb-4">
           <label for="password" class="block font-medium text-gray-700">Password</label>
-          <input id="password" type="password" name="password" placeholder="Enter your password" class="bg-gray-200 mt-1 px-4 py-2 w-full border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+          <input id="password" type="password" name="password" value="<?php echo $password ?>" placeholder="Enter your password" class="bg-gray-200 mt-1 px-4 py-2 w-full border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
         </div>
         <div class="mt-6">
           <button type="submit" name="login-btn" class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-md shadow-md">Login</button>
