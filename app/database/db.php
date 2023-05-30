@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
  include('connection.php');
 
  function dd($value){

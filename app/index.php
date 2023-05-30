@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,22 +27,39 @@
         </div>
       </div>
       <div class="hidden sm:flex sm:items-center sm:ml-6">
-        <div class="ml-3 relative group">
-          <div>
-            <button type="button" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-              <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" src="../pic.png" alt="User Avatar">
-              <span class="ml-2 text-white font-medium">John Doe</span>
-              <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-              </svg>
-            </button>
-          </div>
-          <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 group-hover:block" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-            <a href="dashboard/dashboard.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
-            <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</a>
-          </div>
-        </div>
+
+        <?php if(isset($_SESSION['id'])):?> 
+
+            <div class="ml-3 relative group">
+              <div>
+                <button type="button" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <img class="h-8 w-8 rounded-full" src="../pic.png" alt="User Avatar">
+
+                  <span class="ml-2 text-white font-medium"><?php echo $_SESSION['username']; ?></span>
+
+                  <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+              <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 group-hover:block" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                <?php if($_SESSION['admin']): ?>
+                 
+                  <a href="dashboard/dashboard.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+      
+                <?php endif; ?>
+                <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</a>
+              </div>
+            </div>
+
+        <?php else: ?>
+
+            <div class="flex relative ml-3 gap-4">
+              <a href="login.php" class=" text-white hover:text-green-600">Login</a>
+              <a href="register.php" class=" text-white hover:text-green-600">Sign Up</a>
+            </div>
+
+        <?php endif; ?>
       </div>
       <!-- Hamburger icon for mobile -->
       <div class="flex sm:hidden">
@@ -66,48 +83,51 @@
 
 <!-- hero section -->
     <div class="bg-gray-200 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <h2 class="text-3xl font-semibold text-black mb-8">Trending Posts</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Card 1 -->
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="../pic.png" alt="Card 1" class="w-full">
-                <div class="p-4">
-                <h3 class="text-xl font-semibold mb-2">Title of Card 1</h3>
-                <p class="text-gray-600 mb-2">Author: John Doe</p>
-                <p class="text-gray-600">Date: May 18, 2023</p>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="../pic.png" alt="Card 2" class="w-full">
-                <div class="p-4">
-                <h3 class="text-xl font-semibold mb-2">Title of Card 2</h3>
-                <p class="text-gray-600 mb-2">Author: Jane Smith</p>
-                <p class="text-gray-600">Date: May 17, 2023</p>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="../pic.png" alt="Card 3" class="w-full">
-                <div class="p-4">
-                <h3 class="text-xl font-semibold mb-2">Title of Card 3</h3>
-                <p class="text-gray-600 mb-2">Author: James Johnson</p>
-                <p class="text-gray-600">Date: May 16, 2023</p>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="../pic.png" alt="Card 4" class="w-full">
-                <div class="p-4">
-                <h3 class="text-xl font-semibold mb-2">Title of Card 4</h3>
-                <p class="text-gray-600 mb-2">Author: Emily Brown</p>
-                <p class="text-gray-600">Date: May 15, 2023</p>
-                </div>
-            </div>
-            <!-- Add more cards as needed -->
-            </div>
-        </div>
+      
+      <?php include 'include/messages.php'?>
+    
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 class="text-3xl font-semibold text-black mb-8">Trending Posts</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="../pic.png" alt="Card 1" class="w-full">
+              <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Title of Card 1</h3>
+              <p class="text-gray-600 mb-2">Author: John Doe</p>
+              <p class="text-gray-600">Date: May 18, 2023</p>
+              </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="../pic.png" alt="Card 2" class="w-full">
+              <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Title of Card 2</h3>
+              <p class="text-gray-600 mb-2">Author: Jane Smith</p>
+              <p class="text-gray-600">Date: May 17, 2023</p>
+              </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="../pic.png" alt="Card 3" class="w-full">
+              <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Title of Card 3</h3>
+              <p class="text-gray-600 mb-2">Author: James Johnson</p>
+              <p class="text-gray-600">Date: May 16, 2023</p>
+              </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="../pic.png" alt="Card 4" class="w-full">
+              <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Title of Card 4</h3>
+              <p class="text-gray-600 mb-2">Author: Emily Brown</p>
+              <p class="text-gray-600">Date: May 15, 2023</p>
+              </div>
+          </div>
+          <!-- Add more cards as needed -->
+          </div>
+      </div>
     </div>
 
     <!-- recent posts section -->
