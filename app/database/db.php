@@ -110,7 +110,7 @@ session_start();
 
  function delete($table, $id){
     global $conn;
-    $sql = "DELETE FROM users WHERE id=?";
+    $sql = "DELETE FROM $table WHERE id=?";
     
     $stmt = executeQuery($sql, ['id' => $id]);
     return $stmt -> affected_rows;

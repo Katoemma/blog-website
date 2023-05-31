@@ -1,6 +1,6 @@
-<footer class="bg-gray-900 text-white py-8">
+<footer class="bg-red-700 text-white py-8">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="flex flex-col md:flex-row  justify-between">
       <!-- Social Media Icons -->
       <div>
         <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
@@ -16,10 +16,10 @@
       <div>
         <h4 class="text-xl font-semibold mb-4">Send Us a Message</h4>
         <form class="flex flex-col space-y-4">
-          <input type="text" placeholder="Your Name" class="border border-gray-400 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500">
-          <input type="email" placeholder="Your Email" class="border border-gray-400 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500">
-          <textarea placeholder="Your Message" class="border border-gray-400 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500"></textarea>
-          <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 py-2">Send Message</button>
+          <input type="text" placeholder="Your Name" class="text-black border border-gray-400 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500">
+          <input type="email" placeholder="Your Email" class="text-black border border-gray-400 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500">
+          <textarea placeholder="Your Message" class="text-black border border-gray-400 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-500"></textarea>
+          <button type="submit" class="bg-black text-white rounded-lg px-4 py-2">Send Message</button>
         </form>
       </div>
 
