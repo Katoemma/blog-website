@@ -13,7 +13,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Card 1 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="../pic.png" alt="Card 1" class="w-full">
+        <img src="pic.png" alt="Card 1" class="w-full">
         <div class="p-4">
           <h3 class="text-xl font-semibold mb-2">Title of Card 1</h3>
           <p class="text-gray-600 mb-2">Author: John Doe</p>
@@ -22,7 +22,7 @@
       </div>
       <!-- Card 2 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="../pic.png" alt="Card 2" class="w-full">
+        <img src="pic.png" alt="Card 2" class="w-full">
         <div class="p-4">
           <h3 class="text-xl font-semibold mb-2">Title of Card 2</h3>
           <p class="text-gray-600 mb-2">Author: Jane Smith</p>
@@ -31,7 +31,7 @@
       </div>
       <!-- Card 3 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="../pic.png" alt="Card 3" class="w-full">
+        <img src="pic.png" alt="Card 3" class="w-full">
         <div class="p-4">
           <h3 class="text-xl font-semibold mb-2">Title of Card 3</h3>
           <p class="text-gray-600 mb-2">Author: James Johnson</p>
@@ -40,7 +40,7 @@
       </div>
       <!-- Card 4 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="../pic.png" alt="Card 4" class="w-full">
+        <img src="pic.png" alt="Card 4" class="w-full">
         <div class="p-4">
           <h3 class="text-xl font-semibold mb-2">Title of Card 4</h3>
           <p class="text-gray-600 mb-2">Author: Emily Brown</p>
@@ -62,7 +62,7 @@
         <!-- Post 1 -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
           <div class="flex">
-            <img src="../pic.png" alt="Post 1" class="w-1/3">
+            <img src="pic.png" alt="Post 1" class="w-1/3">
             <div class="p-4 flex flex-col justify-between">
               <div>
                 <h3 class="text-xl font-semibold mb-2">Title of Post 1</h3>
@@ -78,7 +78,7 @@
         <!-- Post 2 -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden mt-6">
           <div class="flex">
-            <img src="../pic.png" alt="Post 2" class="w-1/3">
+            <img src="pic.png" alt="Post 2" class="w-1/3">
             <div class="p-4 flex flex-col justify-between">
               <div>
                 <h3 class="text-xl font-semibold mb-2">Title of Post 2</h3>

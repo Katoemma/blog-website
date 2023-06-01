@@ -5,4 +5,4 @@
         selector: '#mytextarea'
       });
     </script>
-<script src="../../../assets/js/slick.js"></script>
+<script src="../../assets/js/slick.js"></script>

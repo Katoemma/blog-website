@@ -18,9 +18,9 @@
           <a href="/" class="text-white text-lg font-semibold">Essay Blog</a>
         </div>
         <div class="hidden sm:-my-px sm:ml-6 sm:flex">
-          <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 pt-6 rounded-md text-sm font-medium">Home</a>
-          <a href="/services" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 pt-6 rounded-md text-sm font-medium">Services</a>
-          <a href="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 pt-6 rounded-md text-sm font-medium">About Us</a>
+          <a href="/" class="text-gray-300  hover:text-white px-3 pt-6 rounded-md text-sm font-medium">Home</a>
+          <a href="/services" class="text-gray-300  hover:text-white px-3 pt-6 rounded-md text-sm font-medium">Services</a>
+          <a href="/about" class="text-gray-300  hover:text-white px-3 pt-6 rounded-md text-sm font-medium">About Us</a>
         </div>
       </div>
       <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -30,7 +30,7 @@
             <div class="ml-3 relative group">
               <div>
                 <button type="button" class="max-w-xs bg-red-700 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                  <img class="h-8 w-8 rounded-full" src="../pic.png" alt="User Avatar">
+                  <img class="h-8 w-8 rounded-full" src="pic.png" alt="User Avatar">
 
                   <span class="ml-2 text-white font-medium"><?php echo $_SESSION['username']; ?></span>
 
