@@ -60,7 +60,7 @@
         <h2 class="text-2xl font-semibold mt-6">New Post</h2>
         <?php include '../../helpers/formErrors.php' ?>
         <!-- New Post Form -->
-        <form class="mt-6" action="post_dashboard.php" method="post">
+        <form class="mt-6" action="post_dashboard.php" method="post" enctype="multipart/form-data">
             <div class="mb-4">
               <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
               <input type="text" id="title" name="title" value="<?php echo $title?>" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter title">
@@ -98,9 +98,15 @@
             </div>
             
             <div class="flex items-center mr-4">
-                <input  type="checkbox" name="published" value="" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <?php if (empty($published)):?>
+                <input  type="checkbox" name="published" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                 <label for="green-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Publish</label>
-            </div>
+              <?php else:?>
+              
+                <input checked type="checkbox" name="published" class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="green-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Publish</label>
+              <?php endif;?>
+              </div>
             
             <div class="flex py-2 gap-4 ">
               <button type="submit" name="create-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Create Post</button>
@@ -108,37 +114,6 @@
           </div>
         </form>
       </div>
-
-    <div class="hidden container mx-auto px-4">
-      <h2 class="text-2xl font-semibold mt-6">Edit Post</h2>
-      
-      <!-- Edit Form -->
-      <form class="mt-6">
-        <div class="mb-4">
-          <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
-          <input type="text" id="title" name="title" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter title" value="Lorem ipsum dolor sit amet">
-        </div>
-        
-        <div class="mb-4">
-          <label for="author" class="block text-gray-700 text-sm font-bold mb-2">Author</label>
-          <input type="text" id="author" name="author" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter author" value="John Doe">
-        </div>
-        
-        <div class="mb-4">
-          <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Topic</label>
-          <input type="text" id="category" name="category" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" placeholder="Enter category" value="Technology">
-        </div>
-        
-        <div class="mb-4">
-          <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Content</label>
-          <textarea id="mytextarea" name="content" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" rows="6" placeholder="Enter content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus elit nec ultrices commodo.</textarea>
-        </div>
-        
-        <div>
-          <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Update</button>
-        </div>
-      </form>
-    </div>
 
 <?php include 'dashIncludes/editorCDN.php'?>
 </body>
