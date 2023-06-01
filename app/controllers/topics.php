@@ -16,28 +16,22 @@ $topics = selectAll($table);
 
 
 if (isset($_POST['add-btn'])) {
-    // $errors = validateTopic($_POST);
-    unset($_POST['add-btn']);
+    $errors = validateTopic($_POST);
+   
+
+    if (count($errors)=== 0){
+        unset($_POST['add-btn']);
 
         $topic_id = create($table, $_POST);
         $_SESSION['message'] ='Topic added successfully';
 
-        header('location: ../admin/dashboard/topics_dashboard.php');
+        header('location:topics_dashboard.php');
         exit();
-
-    // if (count($errors)=== 0){
-    //     unset($_POST['add-btn']);
-
-    //     $topic_id = create($table, $_POST);
-    //     $_SESSION['message'] ='Topic added successfully';
-
-    //     header('location: ../admin/dashboard/topics_dashboard.php');
-    //     exit();
-    // }
-        // } else{
-    //     $name = $_POST['name'];
-    //     $description = $_POST['description'];
-    // }
+    }
+     else{
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+    }
     
     
 }
@@ -61,6 +55,10 @@ if (isset($_GET['del-id'])) {
 }
 
 if(isset($_POST['edit-btn'])){
+    $errors = validateTopic($_POST);
+   
+
+    if (count($errors)=== 0){
     $id = $_POST['id'];
     unset($_POST['edit-btn'], $_POST['id']);
     
@@ -69,4 +67,9 @@ if(isset($_POST['edit-btn'])){
 
     header('location: topics_dashboard.php');
     exit();
+    } else{
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+    }
 }

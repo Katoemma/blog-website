@@ -14,7 +14,7 @@
         <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0">
-            <a href="href=../../index.php" class="text-white font-bold text-lg">Essay Blog</a>
+            <a href="../../index.php" class="text-white font-bold text-lg">Essay Blog</a>
         </div>
         
         <!-- Hamburger Menu Icon -->

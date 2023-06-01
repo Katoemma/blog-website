@@ -102,7 +102,7 @@
         <ul>
           <hr class="border-t-2 shadow-xl rounded-2xl">
           <?php foreach ($topics as $key => $topic): ?>
-            <li class="py-2"><a href="#" class="text-xl text-gray-800 font-medium"><?php echo $topic['name'];?></a></li>
+            <li class="py-2"><a href="#" class="text-xl text-gray-800 font-serif font-medium"><?php echo $topic['name'];?></a></li>
             <hr class="border-t-2  rounded-lg">
           <?php endforeach; ?>
             

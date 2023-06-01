@@ -5,11 +5,11 @@ function validateTopic($topic)
     $errors = array();
     
     if(empty($topic['name'])){
-        array_push($errors, 'name is required');
+        array_push($errors, 'topic name is required');
     }
     
 
-    $existingTopic = selectOne('topics', ['email' => $topic['name']]);
+    $existingTopic = selectOne('topics', ['name' => $topic['name']]);
     if(isset($existingTopic)){
         array_push($errors, 'topic already exists!');
     }

@@ -4,14 +4,17 @@
 <!-- header -->
 <?php include 'dashIncludes/dashHeader.php'?>
 
+<?php include '../../include/messages.php'?>
+<?php include '../../helpers/formErrors.php' ?>
 <div class="container mx-auto">
   <h2 class="text-2xl font-semibold mt-6">Topic Management</h2>
 
-  <?php include '../../include/messages.php'?>
+ 
 
   <!-- Existing Topics -->
-  <div class="flex flex-col mt-6 gap-4 px-4 md:px-16">
+  <div class="flex flex-col mt-6 gap-8 px-4 md:px-16">
     <h3 class="text-lg font-semibold mb-2">Existing Topics</h3>
+    
     <div class="overflow-x-auto">
       <table class="min-w-full bg-white border border-gray-300">
         <thead>
@@ -43,7 +46,7 @@
 <!-- Add Topic -->
 <div class="hidden mt-6 px-4 md:px-16" id="newtopic">
   <h3 class="text-lg font-semibold mb-2" id="formTitle">Add New Topic</h3>
-  <form class="flex flex-col gap-4 md:w-1/2" action="../../controllers/topics.php" method="POST">
+  <form class="flex flex-col gap-4 md:w-1/2" action="topics_dashboard.php" method="POST">
     <input type="hidden" id="id" name="id" value="">
     <input type="text" id="topicName" name="name" value="<?php echo $name ?>" placeholder="Enter topic name" class="mr-4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
     <textarea id="mytextarea" name="description" placeholder="Enter topic description" class="mr-4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none"><?php echo $description ?></textarea>
