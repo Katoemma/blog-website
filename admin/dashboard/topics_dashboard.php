@@ -1,6 +1,4 @@
-<?php
-  include '../../controllers/topics.php';
-?>
+<?php include '../../controllers/topics.php';?>
 <!-- header -->
 <?php include 'dashIncludes/dashHeader.php'?>
 
