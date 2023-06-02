@@ -13,9 +13,9 @@ function validatePost($post)
     if(empty($post['author'])){
         array_push($errors, 'Authors name is required');
     }
-    if(empty($post['topic_id'])){
-        array_push($errors, 'Please select a topic');
-    }
+    // if(empty($topic['topic_id'])){
+    //     array_push($errors, 'Please select a topic');
+    // }
     
 
     $existingPost = selectOne('post', ['title' => $post['title']]);

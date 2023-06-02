@@ -7,7 +7,7 @@
 
 
 <!-- the page content starts here -->
-<div class="lg:w-1/2 container mx-auto px-4">
+<div class="lg:w-1/2 container mx-auto px-4" >
   <h2 class="text-2xl font-semibold mt-6">Manage Posts</h2>
   
   <!-- New Post Button -->
@@ -37,15 +37,15 @@
           <td class="py-3 border-b"><?php echo $post['author']?></td>
           <td class="py-3 border-b"><?php echo $post['created_at']?></td>
           <td class="py-3 border-b">
-            <button class="text-blue-500 hover:text-blue-700 mr-2">Edit</button>
-            <button class="text-red-500 hover:text-red-700">Delete</button>
+            <a href="edit_post.php?id=<?php echo $post['id']?>" class="text-blue-500 hover:text-blue-700 mr-2">Edit</a>
+            <a href="edit_post.php?delete_id=<?php echo $post['id']?>" class="text-red-500 hover:text-red-700">Delete</button>
           </td>
         
 
           <?php if ($post['published']):?>
-            <td class="py-3 border-b" ><a href="#" class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Unpublish</a></td>
+            <td class="py-3 border-b" ><a href="edit_post.php?published=0&p_id=<?php echo $post['id']?>" class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Unpublish</a></td>
           <?php else: ?>
-           <td class="py-3 border-b"><a href="#" class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Publish</a></td>
+           <td class="py-3 border-b"><a href="edit_post.php?published=1&p_id=<?php echo $post['id']?>" class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Publish</a></td>
           <?php endif; ?>
         <?php endforeach; ?>
         
@@ -56,7 +56,7 @@
 </div>
 
 
-      <div class="md:w-1/2 container mx-auto px-4" id="newPost">
+      <div class="hidden md:w-1/2 container mx-auto px-4" id="newPost">
         <h2 class="text-2xl font-semibold mt-6">New Post</h2>
         <?php include '../../helpers/formErrors.php' ?>
         <!-- New Post Form -->
@@ -110,7 +110,7 @@
             
             <div class="flex py-2 gap-4 ">
               <button type="submit" name="create-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Create Post</button>
-              <a href="post_dashboard.php" class="bg-red-700 text-white font-semibold py-2 px-4 rounded">Cancel</a>
+              <button onclick="closeForm()" class="bg-red-700 text-white font-semibold py-2 px-4 rounded">Cancel</button>
           </div>
         </form>
       </div>

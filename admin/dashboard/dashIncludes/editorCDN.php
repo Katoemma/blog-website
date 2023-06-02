@@ -6,3 +6,13 @@
       });
     </script>
 <script src="../../assets/js/slick.js"></script>
+<script>
+  function newPost(){
+    document.getElementById("newPost").style.display = "block";
+    document.getElementById("posts").style.display = "none";
+}
+function closeForm(){
+    document.getElementById("newPost").style.display = "none";
+    document.getElementById("posts").style.display = "block";
+}
+</script>

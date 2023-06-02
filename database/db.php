@@ -90,7 +90,7 @@ session_start();
 
  function update($table, $id ,  $data){
     global $conn;
-    //$sql = "CREATE users SET username=?, admin=?, password=? WHERE id=?";
+   
     $sql = "UPDATE $table SET ";
 
     $i = 0;
