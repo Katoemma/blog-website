@@ -13,7 +13,8 @@ function validateUser($user)
     if(empty($user['password'])){
         array_push($errors, 'Password is required');
     }
-    if($user['password'] !== $user['confirm_password']){
+
+    if (isset($user['confirm_password']) && $user['password'] !== $user['confirm_password']) {
         array_push($errors, 'Password does not match');
     }
 
