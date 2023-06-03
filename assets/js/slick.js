@@ -12,12 +12,3 @@ ClassicEditor
 .catch( error => {
     console.log( error );
 } );
-
-// function newPost(){
-//     document.getElementById("newPost").style.display = "block";
-//     document.getElementById("posts").style.display = "none";
-// }
-// function closeForm(){
-//     document.getElementById("newPost").style.display = "none";
-//     document.getElementById("posts").style.display = "block";
-// }

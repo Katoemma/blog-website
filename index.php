@@ -14,9 +14,9 @@
     <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="3" autoplay-delay="2500" autoplay-disable-on-interaction="false">
       <!-- Card 1 -->
       <swiper-slide class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="pic.png" alt="Card 1" class="w-full">
+        <img src="pckey.jpg" alt="Card 1" class="w-full h-60">
         <div class="p-4">
-          <h3 class="text-xl font-semibold mb-2">Title of Card 1</h3>
+          <h3 class="text-xl font-serif font-semibold mb-2">Programming Heroes</h3>
           <p class="text-gray-600 mb-2">Author: John Doe</p>
           <p class="text-gray-600">Date: May 18, 2023</p>
         </div>
@@ -62,11 +62,11 @@
       <div class="lg:col-span-3">
         <!-- Post 1 -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div class="flex">
-            <img src="pic.png" alt="Post 1" class="w-1/3">
+          <div class="flex flex-col md:flex-row">
+            <img src="pckey.jpg" alt="Post 1" class="w-full md:w-1/3">
             <div class="p-4 flex flex-col justify-between">
               <div>
-                <h3 class="text-xl font-semibold mb-2">Title of Post 1</h3>
+                <h3 class="text-xl font-serif font-semibold mb-2">Programming Heroes</h3>
                 <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in nisi eu nisi sodales fermentum.</p>
                 <p class="text-gray-600 mb-2">Author: John Doe</p>
                 <p class="text-gray-600">Date: May 18, 2023</p>
