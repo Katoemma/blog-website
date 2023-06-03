@@ -38,7 +38,7 @@ function userlog($user){
  if (isset($_POST['submit-btn']) || isset($_POST['add-btn'])) {
     $errors = validateUser($_POST);
 
-    if (count($errors) === 0) {
+    if(count($errors)=== 0){
         unset($_POST['submit-btn'], $_POST['confirm_password'], $_POST['add-btn'] );
         $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
@@ -106,7 +106,7 @@ if (isset($_GET['id'])) {
 if (isset($_POST['update-user'])) {
     $errors = validateUser($_POST);
 
-    if (count($errors) === 0) {
+    if(count($errors)=== 0){
         $id = $_POST['id'];
         unset($_POST['update-user'], $_POST['confirm_password'], $_POST['id']);
         $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);

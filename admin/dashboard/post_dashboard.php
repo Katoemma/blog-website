@@ -9,7 +9,7 @@
 <!-- the page content starts here -->
 <div class="lg:w-1/2 container mx-auto px-4" >
   <h2 class="text-2xl font-semibold mt-6">Manage Posts</h2>
-  
+  <?php include '../../helpers/formErrors.php' ?>
   <!-- New Post Button -->
   <div class="mt-6">
     <button class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded" onclick="newPost()">New Post</button>
@@ -58,7 +58,6 @@
 
       <div class="hidden md:w-1/2 container mx-auto px-4" id="newPost">
         <h2 class="text-2xl font-semibold mt-6">New Post</h2>
-        <?php include '../../helpers/formErrors.php' ?>
         <!-- New Post Form -->
         <form class="mt-6" action="post_dashboard.php" method="post" enctype="multipart/form-data">
             <div class="mb-4">

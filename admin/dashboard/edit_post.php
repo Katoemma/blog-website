@@ -5,6 +5,7 @@
 <?php include 'dashIncludes/dashHeader.php'?>
     <div class="md:w-1/2 container mx-auto px-4">
       <h2 class="text-2xl font-semibold mt-6">Edit Post</h2>
+      <?php include '../../helpers/formErrors.php' ?>
       
         <!-- Edit Form -->
         <form class="mt-6" action="edit_post.php" method="POST" enctype="multipart/form-data">
