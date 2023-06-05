@@ -16,3 +16,11 @@ function closeForm(){
     document.getElementById("posts").style.display = "block";
 }
 </script>
+<script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+</script>
