@@ -1,20 +1,23 @@
-<?php
-
-?>
+<?php include 'controllers/posts.php'?>
 <!-- header and nav -->
 <?php include 'include/header.php'  ?>
+<?php
+
+    if (isset($_GET['id'])) {
+        $post = selectOne('post', ['id'=> $_GET['id']]);
+    }
+    
+?>
 
 <!-- main -->
 <div class="p-4 py-24 w-full bg-gray-100">
-    <div class="h- max-w-lg mx-auto bg-white shadow-md rounded-md p-4 ">
-        <h2 class="text-xl font-bold mb-2">Post Title</h2>
-        <p class="text-gray-600 mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+    <div class="w-full md:w-1/2 mx-auto bg-white shadow-md rounded-md p-4 ">
+        <h2 class="text-xl font-bold mb-2"><?php echo $post['title']?></h2>
+
+        <img src="<?php echo 'admin/uploads/' .$post['image']?>" alt="" class="w-full rounded-lg mb-4 h-82 md:h-96">
+        <span class="text-gray-600 mb-4 mt-4 md:text-lg">
+          <?php echo html_entity_decode($post['body']) ?>
+        </span>
         <hr class="border-t-2">
         <div class="flex justify-between items-center p-4">
             <div class="flex items-center gap-4">

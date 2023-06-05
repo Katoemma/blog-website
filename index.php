@@ -5,7 +5,10 @@
 
 <?php
   $postsTitle = 'Recent Posts';
-  if (isset($_POST['search-term'])) {
+  if (isset($_GET['t_id'])) {
+    $posts = getPostByTopic($_GET['t_id']);
+  }
+  elseif (isset($_POST['search-term'])) {
     $postsTitle = "You searched for '". $_POST['search-term']. " '";
     $posts = searchPosts($_POST['search-term']);
   }else{
@@ -26,7 +29,7 @@
       <!-- Card 1 -->
       <?php foreach($posts as $post):?>
         <swiper-slide class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src="<?php echo 'admin/uploads/'. $post['image']?>" alt="Card 1" class="w-full h-60">
+          <a href="single.php?id=<?php echo $post['id'];?>" ><img src="<?php echo 'admin/uploads/'. $post['image']?>" alt="Card 1" class="w-full h-60"></a>
           <div class="p-4">
             <h3 class="text-xl font-serif font-semibold mb-2"><?php echo $post['title']?></h3>
             <p class="text-gray-600 mb-2">Author: <?php echo $post['author']?></p>
@@ -56,16 +59,16 @@
             <div class="bg-white shadow-lg rounded-lg overflow-hidden mt-6">
               <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/3">
-                  <img src="<?php echo 'admin/uploads/'. $post['image']?>" alt="Card 1" class='w-full h-60 md:w-72'>
+                  <img src="<?php echo 'admin/uploads/'. $post['image']?>" alt="Card 1" class='w-full h-60 md:96'>
                 </div>
-                <div class="p-4 flex flex-col justify-between">
+                <div class=" p-4 flex flex-col justify-between">
                   <div>
-                    <h3 class="text-xl font-serif font-semibold mb-2"><?php echo $post['title']?></h3>
-                    <p class="text-gray-600 mb-4"><?php echo html_entity_decode(substr($post['body'], 0, 150) . '...')?></p>
+                  <a href="single.php?id=<?php echo $post['id'];?>"><h3 class="text-xl font-serif font-semibold mb-2"><?php echo $post['title']?></h3></a>
+                    <p class="text-gray-600 mb-4 md:w-1/2"><?php echo html_entity_decode(substr($post['body'], 0, 150) . '...')?></p>
                     <p class="text-gray-600 mb-2">Author: <?php echo $post['author']?></p>
                     <p class="text-gray-600">Date: <?php echo date('F j, Y', strtotime($post['created_at']));?> </p>
                   </div>
-                  <a href="#" class="btn px-6 py-2 w-32 bg-red-600 text-white font-semibold rounded">Read More</a>
+                  <a href="single.php?id=<?php echo $post['id'];?>" class="btn px-6 py-2 w-32 bg-red-600 text-white font-semibold rounded">Read More</a>
                 </div>
               </div>
             </div>
@@ -85,7 +88,7 @@
           <ul>
             <hr class="border-t-2 shadow-xl rounded-2xl">
             <?php foreach ($topics as $key => $topic): ?>
-              <li class="py-2"><a href="#" class="text-xl text-gray-800 font-serif font-medium"><?php echo $topic['name'];?></a></li>
+              <li  class="text-xl text-gray-800 font-serif font-medium py-2"><a href="index.php?t_id=<?php echo $post['topic_id']?>" ><?php echo $topic['name'];?></a></li>
               <hr class="border-t-2  rounded-lg">
             <?php endforeach; ?>
               

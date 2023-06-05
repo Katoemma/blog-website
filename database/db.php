@@ -139,3 +139,15 @@ function searchPosts($term)
     return $posts;
 }
 
+function getPostByTopic($topic_id)
+{
+    global $conn;
+    $sql = $conn->prepare("SELECT * FROM post WHERE published=1 AND topic_id=?");
+    $sql->bind_param("i", $topic_id);
+    $sql->execute();
+    $result = $sql->get_result();
+    $posts = $result->fetch_all(MYSQLI_ASSOC);
+    $sql->close();
+    return $posts;
+}
+
