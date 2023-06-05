@@ -4,7 +4,9 @@
 
 
 <?php
+  $postsTitle = 'Recent Posts';
   if (isset($_POST['search-term'])) {
+    $postsTitle = "You searched for '". $_POST['search-term']. " '";
     $posts = searchPosts($_POST['search-term']);
   }else{
      $posts = selectAll('post',['published'=> 1]);
@@ -42,9 +44,12 @@
     <!-- recent posts section -->
 <div class="bg-gray-100 py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
     <div class="flex flex-col-reverse  md:flex-row gap-6">
+    
       <!-- Posts Div -->
       <div class="lg:col-span-3 md:w-4/5">
+      <h2 class="text-3xl font-semibold text-black mb-8"><?php echo $postsTitle ?></h2>
         
         <?php foreach($posts as $key=> $post):?>
           <?php $image = $post['image'];?>

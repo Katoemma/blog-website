@@ -83,14 +83,14 @@
 
   // Create the grouped bar chart
   new Chart(ctx, {
-    type: 'pie',
+    type: 'doughnut',
     data: dataset,
     options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
+      // scales: {
+      //   y: {
+      //     beginAtZero: true
+      //   }
+      // }
     }
   });
 </script>

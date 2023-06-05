@@ -15,7 +15,7 @@
     <div class="flex justify-between h-16">
       <div class="flex">
         <div class="flex-shrink-0 flex items-center">
-          <a href="/" class="text-white text-lg font-semibold">Essay Blog</a>
+          <a href="index.php" class="text-white text-lg font-semibold">Essay Blog</a>
         </div>
         <div class="hidden sm:-my-px sm:ml-6 sm:flex">
           <a href="/" class="text-gray-300  hover:text-white px-3 pt-6 rounded-md text-sm font-medium">Home</a>
