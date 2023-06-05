@@ -116,6 +116,26 @@ session_start();
     return $stmt -> affected_rows;
  }
 
- 
+//  function getPublishedPosts(){
+//     global $conn;
+//     //SELECT * FROM posts WHERE published=1;
+//     $sql = "SELECT p.*, u.username FROM posts AS p.user_id=u_id WHERE p.publisher=?"
+//  }
 
- 
+function searchPosts($term)
+{
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT * FROM post WHERE published = 1 AND (title LIKE ? OR body LIKE ?)");
+    $term = '%' . $term . '%';
+    $stmt->bind_param('ss', $term, $term);
+    $stmt->execute();
+    
+    $result = $stmt->get_result();
+    $posts = $result->fetch_all(MYSQLI_ASSOC);
+    
+    $stmt->close();
+    
+    return $posts;
+}
+
