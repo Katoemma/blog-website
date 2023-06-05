@@ -1,6 +1,4 @@
-<?php
-
-?>
+<?php include '../../controllers/topics.php';?>
 
 <!-- header -->
 <?php include 'dashIncludes/dashHeader.php'?>
@@ -33,26 +31,6 @@
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="site-favicon">Site Favicon</label>
         <input id="site-favicon" type="file" accept="image/x-icon">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="default-language">Default Language</label>
-        <input id="default-language" type="text" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" value="en">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="date-time-format">Date and Time Format</label>
-        <input id="date-time-format" type="text" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" value="Y-m-d H:i:s">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="timezone">Timezone</label>
-        <select id="timezone" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500">
-          <option value="America/New_York">America/New_York</option>
-          <option value="Europe/London">Europe/London</option>
-          <option value="Asia/Tokyo">Asia/Tokyo</option>
-          <!-- Add more timezone options as needed -->
-        </select>
       </div>
 
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Save Changes</button>

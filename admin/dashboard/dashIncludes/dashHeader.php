@@ -66,7 +66,7 @@
                     <div class="py-1">
                     <a href="admin_dashboard.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                     <a href="settings.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Site Settings</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-red-500 font-medium hover:bg-gray-100">Logout</a>
+                    <a href="../../logout.php" class="block px-4 py-2 text-sm text-red-500 font-medium hover:bg-gray-100">Logout</a>
                     </div>
                 </div>
             </div>
