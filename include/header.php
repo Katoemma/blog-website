@@ -14,6 +14,9 @@
       }
       ?>
     <?php endif;?>
+    <?php foreach ($settings as $key => $title):?>
+        <link rel="shortcut icon" href=" <?php echo 'admin/uploads/'.$title['favicon']?>" type="image/x-icon">
+    <?php endforeach;?>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
@@ -24,13 +27,13 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex">
-            <div class="flex gap-4 items-center">
+            <a href="index.php" class="flex gap-4 items-center">
                 <?php foreach ($settings as $key => $title):?>
-                    <img src="<?php echo 'admin/uploads/'.$title['logo']?>" alt="" class="w-8">
+                    <img src="<?php echo 'admin/uploads/'.$title['logo']?>" alt="" class="w-16">
                 
-                    <a href="../../index.php" class="text-white text-lg font-semibold"><?php echo $title['title']?></a>
+                    <span class="text-white text-lg font-semibold"><?php echo $title['title']?></span>
                 <?php endforeach;?>
-            </div>
+            </a>
         <div class="hidden sm:-my-px sm:ml-6 sm:flex">
           <a href="/" class="text-gray-300  hover:text-white px-3 pt-6 rounded-md text-sm font-medium">Home</a>
           <a href="/services" class="text-gray-300  hover:text-white px-3 pt-6 rounded-md text-sm font-medium">Services</a>

@@ -78,7 +78,7 @@
       </div>
 
       <!-- Search Bar and Topics Div -->
-      <div class=" mt-6">
+      <div class=" mt-6 md:mt-16">
         <div class="bg-white shadow-lg rounded-lg p-6">
           <h3 class="text-xl font-semibold mb-4">Search</h3>
           <form action="index.php" method="post">

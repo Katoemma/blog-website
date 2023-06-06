@@ -50,7 +50,7 @@
     </div>
     
   </div>
-  <div class="w-96">
+  <div class="w-96 p-12 border-gray-600 border-gray-600 rounded-lg">
   <canvas id="summaryChart"></canvas>
 
   </div>

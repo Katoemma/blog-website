@@ -1,6 +1,4 @@
-<?php
-
-?>
+<?php include '../../controllers/users.php';?>
 <!-- header -->
 <?php include 'dashIncludes/dashHeader.php'?>
 
