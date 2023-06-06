@@ -46,14 +46,15 @@ function userlog($user){
           $_POST['admin'] = 1;
           $user_id = create($table, $_POST);
           $_SESSION['message'] = 'Admin User successfuly created';
-          header('location: users_dashboard.php');
-          exit();
+          userlog($user);
+         
         } else {
           $_POST['admin'] = 0;
           $user_id = create($table, $_POST);
           $user = selectOne($table, ['id' => $user_id]);
-          userlog($user);
         }
+        header('location: users_dashboard.php');
+        exit();
     } else {
         $username = $_POST['username'];
         $email = $_POST['email'];

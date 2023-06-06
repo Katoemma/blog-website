@@ -32,9 +32,6 @@
           <button type="submit" name="login-btn" class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-md shadow-md">Login</button>
         </div>
       </form>
-      <div class="mt-8 text-center">
-        <p class="text-gray-600">Don't have an account? <a href="register.php" class="text-indigo-600 hover:text-indigo-500 font-medium">Sign Up</a></p>
-      </div>
     </div>
   </div>
 </body>
