@@ -1,10 +1,11 @@
-<?php ?>
+<?php include '../../controllers/setting.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <title>Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
@@ -15,8 +16,12 @@
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <div class="flex-shrink-0">
-            <a href="../../index.php" class="text-white font-bold text-lg">eassy</a>
+        <div class="flex gap-4">
+            <?php foreach ($settings as $key => $title):?>
+                <img src="<?php echo '../uploads/'.$title['logo']?>" alt="" class="w-8">
+            
+                <a href="../../index.php" class="text-white text-lg font-semibold"><?php echo $title['title']?></a>
+            <?php endforeach;?>
         </div>
         
         <!-- Hamburger Menu Icon -->

@@ -7,7 +7,7 @@ include $basePath . '/helpers/validateUser.php';
 
 $table ='users'; // initialise the table 
 
-$users = selectAll($table);
+$users = selectAll($table,['admin'=> 0]);
 
 $id ='';
 $username = '';

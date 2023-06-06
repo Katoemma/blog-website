@@ -1,4 +1,5 @@
 <?php include 'controllers/topics.php'?>
+
 <!-- header section -->
 <?php include 'include/header.php';?>
 
@@ -61,7 +62,7 @@
                 <div class="md:w-1/3">
                   <img src="<?php echo 'admin/uploads/'. $post['image']?>" alt="Card 1" class='w-full h-60 md:96'>
                 </div>
-                <div class=" p-4 flex flex-col justify-between">
+                <div class="md:w-2/3 p-4 flex flex-col justify-between">
                   <div>
                   <a href="single.php?id=<?php echo $post['id'];?>"><h3 class="text-xl font-serif font-semibold mb-2"><?php echo $post['title']?></h3></a>
                     <p class="text-gray-600 mb-4 md:w-1/2"><?php echo html_entity_decode(substr($post['body'], 0, 150) . '...')?></p>
@@ -87,8 +88,8 @@
           <h3 class="text-xl font-semibold font-black mb-4">Topics</h3>
           <ul>
             <hr class="border-t-2 shadow-xl rounded-2xl">
-            <?php foreach ($topics as $key => $topic): ?>
-              <li  class="text-xl text-gray-800 font-serif font-medium py-2"><a href="index.php?t_id=<?php echo $post['topic_id']?>" ><?php echo $topic['name'];?></a></li>
+            <?php foreach ($topics as  $topic): ?>
+              <li  class="text-xl text-gray-800 font-serif font-medium py-2"><a href="index.php?t_id=<?php echo $topic['id']?>" ><?php echo $topic['name'];?></a></li>
               <hr class="border-t-2  rounded-lg">
             <?php endforeach; ?>
               

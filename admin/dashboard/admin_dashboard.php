@@ -3,21 +3,25 @@
 <!-- header -->
 <?php include 'dashIncludes/dashHeader.php'?>
 
+<?php
+  $adminuser = selectAll('users',['admin'=> 1]);
+?>
 <!-- page contents start here! -->
 
 <div class="container mx-auto px-4">
   <h2 class="text-2xl font-semibold mt-6">Profile</h2>
 
   <!-- User Details -->
+  <?php foreach ($adminuser as $key => $admin):?>
   <div class="mt-6">
     <div class="flex items-center mb-4">
       <img class="w-12 h-12 rounded-full" src="profile-image.jpg" alt="Profile Picture">
       <div class="ml-4">
-        <h3 class="text-xl font-semibold">John Doe</h3>
-        <p class="text-gray-500">john@example.com</p>
+        <h3 class="text-xl font-semibold"><?php echo $admin['username']?></h3>
+        <p class="text-gray-500"><?php echo $admin['email']?></p>
       </div>
     </div>
-
+    <?php endforeach;?>
     <div class="bg-white border border-gray-300 p-4 rounded">
       <h4 class="text-lg font-semibold mb-4">User Information</h4>
 

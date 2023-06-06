@@ -1,3 +1,5 @@
+<?php include 'controllers/setting.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,11 @@
     <?php if (isset($_GET['id'])):?>
       <?php echo "<title>" .$post['title']." | eassy blog</title>" ?>
     <?php else:?>
-      <?php echo "<title>Essay Blog</title>" ?>
+      <?php $titles = selectAll('settings', ['id' => 1]);
+      foreach ($titles as $key => $title) {
+        echo "<title>" .$title['title']."</title>" ;
+      }
+      ?>
     <?php endif;?>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
@@ -18,8 +24,12 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex">
-        <div class="flex-shrink-0 flex items-center">
-          <a href="index.php" class="text-white text-lg font-semibold">Essay Blog</a>
+        <div class="flex gap-4 items-center">
+            <?php foreach ($settings as $key => $title):?>
+                <img src="<?php echo 'admin/uploads/'.$title['logo']?>" alt="" class="w-8">
+            
+                <a href="../../index.php" class="text-white text-lg font-semibold"><?php echo $title['title']?></a>
+            <?php endforeach;?>
         </div>
         <div class="hidden sm:-my-px sm:ml-6 sm:flex">
           <a href="/" class="text-gray-300  hover:text-white px-3 pt-6 rounded-md text-sm font-medium">Home</a>
