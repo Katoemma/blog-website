@@ -37,17 +37,6 @@
       <p class="text-4xl font-bold"><?php echo count(selectAll('topics'))?></p>
     </div>
     
-    <!-- Other Summary Card 2 -->
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-lg font-semibold mb-4">Summary Card 2</h3>
-      <p class="text-4xl font-bold">Value 2</p>
-    </div>
-    
-    <!-- Other Summary Card 3 -->
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h3 class="text-lg font-semibold mb-4">Summary Card 2</h3>
-      <p class="text-4xl font-bold">Value 2</p>
-    </div>
     
   </div>
   <div class="w-96 p-12 border-gray-600 border-gray-600 rounded-lg">

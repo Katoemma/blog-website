@@ -42,6 +42,7 @@ if (isset($_GET['id'])) {
     $topic_id = $post['topic_id'];
     $author = $post['author'];
     $published = $post['published'];
+    var_dump($title);
  }
 
 if (isset($_POST['create-btn'])) {
