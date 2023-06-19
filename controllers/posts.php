@@ -69,6 +69,7 @@ if (isset($_POST['create-btn'])) {
         $_POST['user_id'] = 1;
         $_POST['published'] = isset($_POST['published']) ? 1 : 0;
         $_POST['body'] = htmlentities($_POST['body']);
+        $_POST['token'] = time();
 
         $post = create($table, $_POST);
         $_SESSION['message'] = 'Post created successfully';
