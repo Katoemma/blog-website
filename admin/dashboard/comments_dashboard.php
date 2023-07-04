@@ -2,55 +2,60 @@
 <!-- header -->
 <?php include 'dashIncludes/dashHeader.php'?>
 
-<!-- page conttents start here! -->
+<!-- page contents start here! -->
 
-    <div class="container mx-auto px-4">
+<div class="container mx-auto px-4">
   <h2 class="text-2xl font-semibold mt-6">Manage Comments</h2>
 
   <!-- Comments Table -->
   <div class="mt-6 overflow-x-auto">
-    <table class="min-w-full bg-white border border-gray-300">
+    <table class="bg-white border border-gray-300">
       <thead>
         <tr>
           <th class="py-2 px-4 border-b">Post Title</th>
           <th class="py-2 px-4 border-b">Comment</th>
           <th class="py-2 px-4 border-b">Author</th>
           <th class="py-2 px-4 border-b">Date</th>
-          <th class="py-2 px-4 border-b">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <!-- Comment 1 -->
-        <tr>
-          <td class="py-3 px-4 border-b">Lorem ipsum dolor sit amet</td>
-          <td class="py-3 px-4 border-b">This is a great article!</td>
-          <td class="py-3 px-4 border-b">John Doe</td>
-          <td class="py-3 px-4 border-b">May 1, 2023</td>
-          <td class="py-3 px-4 border-b">
-            <button class="text-blue-500 hover:text-blue-700 mr-2">View</button>
-            <button class="text-red-500 hover:text-red-700">Delete</button>
-          </td>
-        </tr>
+        <?php
+        $commentsPerPage = 4;
+        $totalComments = count(selectAll('comments'));
+        $totalPages = ceil($totalComments / $commentsPerPage);
 
-        <!-- Comment 2 -->
-        <tr>
-          <td class="py-3 px-4 border-b">Consectetur adipiscing elit</td>
-          <td class="py-3 px-4 border-b">Thanks for sharing this information!</td>
-          <td class="py-3 px-4 border-b">Jane Smith</td>
-          <td class="py-3 px-4 border-b">May 5, 2023</td>
-          <td class="py-3 px-4 border-b">
-            <button class="text-blue-500 hover:text-blue-700 mr-2">View</button>
-            <button class="text-red-500 hover:text-red-700">Delete</button>
-          </td>
-        </tr>
+        // Get the current page from the query string
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 
-        <!-- Add more comments as needed -->
+        // Calculate the offset for the database query
+        $offset = ($currentPage - 1) * $commentsPerPage;
 
+        // Fetch comments for the current page
+        $comments = selectAll('comments', [], $offset, $commentsPerPage);
+
+        foreach ($comments as $comment) :
+          $postId = $comment['post'];
+          $post = selectOne('post', ['id' => $postId]);
+          $postTitle = $post['title'];
+          ?>
+          <tr>
+            <td class="py-3 px-4 border-b font-semibold"><?php echo $postTitle; ?></td>
+            <td class="py-3 px-4 border-b"><?php echo $comment['comment']; ?></td>
+            <td class="py-3 px-4 border-b"><?php echo $comment['author']; ?></td>
+            <td class="py-3 px-4 border-b"><?php echo $comment['date']; ?></td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
+
+    <!-- Pagination -->
+    <div class="mt-6">
+      <?php for ($page = 1; $page <= $totalPages; $page++) : ?>
+        <a href="?page=<?php echo $page; ?>" class="px-2 py-1 bg-gray-200 hover:bg-gray-300 rounded"><?php echo $page; ?></a>
+      <?php endfor; ?>
+    </div>
   </div>
 </div>
-
 
 <div class="container mx-auto px-4">
   <h2 class="text-2xl font-semibold mt-6">Comment Details</h2>

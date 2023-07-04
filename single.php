@@ -31,14 +31,17 @@
                     <i class="fa fa-share-alt text-2xl" aria-hidden="true"></i>
                 </button>
             </div>
-            <span class="text-gray-500">10 Likes | 5 Comments</span>
+            <?php $comments = selectAll('comments',['post'=>$_GET['id']])?>
+            <span class="text-gray-500">10 Likes | <?php echo count($comments) ?> Comments</span>
         </div>
         
         <div id="commentForm" class="hidden mt-4">
-            <form class="comment-form">
-                <input type="text" class="username-input w-full bg-gray-100 border border-gray-300 rounded p-2 mb-2" placeholder="Your Name" required>
-                <textarea class="comment-input w-full bg-gray-100 border border-gray-300 rounded p-2 mb-2" placeholder="Your Comment" required></textarea>
-                <button type="submit" class="submit-button bg-blue-500 text-white py-2 px-4 rounded">Comment</button>
+            <form  action="" method="post" >
+                <!-- post title -->
+                <input type="hidden" name="post" value="<?php echo $_GET['id'] ?>">
+                <input type="text" name="author" class="username-input w-full bg-gray-100 border border-gray-300 rounded p-2 mb-2" placeholder="Your Name" required>
+                <textarea name="comment" class="comment-input w-full bg-gray-100 border border-gray-300 rounded p-2 mb-2" placeholder="Your Comment" required></textarea>
+                <button type="submit" name="commented" class="submit-button bg-blue-500 text-white py-2 px-4 rounded">Comment</button>
             </form>
         </div>
     </div>

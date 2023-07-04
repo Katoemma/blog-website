@@ -1,7 +1,10 @@
 <?php
-
-
  include 'controllers/users.php';
+
+ $users = selectAll('users',['admin'=> '1']);
+ if (count($users) == 0) {
+  header('location:register.php');
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">

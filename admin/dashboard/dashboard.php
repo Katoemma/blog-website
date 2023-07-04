@@ -19,7 +19,7 @@
     <!-- Total Comments -->
     <div class="text-white bg-yellow-400 p-6 rounded-lg shadow">
       <h3 class="text-lg font-semibold mb-4">Total Comments</h3>
-      <p class="text-4xl font-bold">456</p>
+      <p class="text-4xl font-bold"><?php echo count(selectAll('comments'))?></p>
     </div>
     
     <!-- Total Users -->

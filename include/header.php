@@ -136,7 +136,7 @@
                   <i data-popover-target="popover-bottom" data-popover-placement="bottom" class="fa fa-user-circle-o text-2xl"></i>
                   <div data-popover id="popover-bottom" role="tooltip" class="absolute z-10 invisible inline-block w-40 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
                       <div class="px-3 py-2 text-center">
-                          <p>login</p>
+                          <h5>login</h5>
                       </div>
                       <div data-popper-arrow></div>
                   </div>

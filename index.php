@@ -55,7 +55,7 @@
       <div class="lg:col-span-3 md:w-4/5">
       <h2 class="text-3xl font-semibold text-black mb-8"><?php echo $postsTitle ?></h2>
         
-        <?php foreach($posts as $key=> $post):?>
+        <?php foreach(array_reverse($posts) as $key=> $post):?>
           <?php $image = $post['image'];?>
             <div class="bg-white shadow-lg rounded-lg overflow-hidden mt-6">
               <div class="flex flex-col md:flex-row">
@@ -66,8 +66,8 @@
                   <div>
                   <a href="single.php?id=<?php echo $post['id'];?>"><h3 class="text-xl font-serif font-semibold mb-2"><?php echo $post['title']?></h3></a>
                     <p class="text-gray-600 mb-4 md:w-1/2"><?php echo html_entity_decode(substr($post['body'], 0, 150) . '...')?></p>
-                    <p class="text-gray-600 mb-2">Author: <?php echo $post['author']?></p>
-                    <p class="text-gray-600">Date: <?php echo date('F j, Y', strtotime($post['created_at']));?> </p>
+                    <h3 class="text-gray-600 mb-2">Author: <?php echo $post['author']?></h3>
+                    <span class="text-gray-600">Date: <?php echo date('F j, Y', strtotime($post['created_at']));?> </span>
                   </div>
                   <a href="single.php?id=<?php echo $post['id'];?>" class="btn px-6 py-2 w-32 bg-red-600 text-white font-semibold rounded">Read More</a>
                 </div>

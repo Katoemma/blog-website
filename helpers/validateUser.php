@@ -13,6 +13,9 @@ function validateUser($user)
     if(empty($user['password'])){
         array_push($errors, 'Password is required');
     }
+    if($user['password'] <= 6){
+        array_push($errors, 'Password must be More than 6 characters');
+    }
 
     if (isset($user['confirm_password']) && $user['password'] !== $user['confirm_password']) {
         array_push($errors, 'Password does not match');

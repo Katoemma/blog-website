@@ -30,7 +30,7 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach($posts as $key => $post):?>
+        <?php foreach(array_reverse($posts) as $key => $post):?>
         <tr>
           <td class="py-3 pl-2 border-b"><?php echo $key + 1?></td>
           <td class="py-3 border-b"><?php echo $post['title']?></td>

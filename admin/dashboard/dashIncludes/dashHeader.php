@@ -1,4 +1,9 @@
 <?php include '../../controllers/setting.php'?>
+<?php
+    if (!isset($_SESSION['admin'])) {
+        header('location:../../index.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

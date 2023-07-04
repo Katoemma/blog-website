@@ -37,12 +37,11 @@ if (isset($_GET['published']) && isset($_GET['p_id'])) {
 if (isset($_GET['id'])) {
     $post = selectOne($table, ['id'=> $_GET['id']]);
     $id = $post['id'];
-    $title = $post['title'];
+    $postTitle = $post['title'];
     $body = $post['body'];   
     $topic_id = $post['topic_id'];
     $author = $post['author'];
     $published = $post['published'];
-    var_dump($title);
  }
 
 if (isset($_POST['create-btn'])) {
@@ -130,6 +129,16 @@ if (isset($_POST['update-btn'])) {
     }
 
 }
+
+//commenting section
+ if (isset($_POST['commented'])) {
+    $currentURL = $_SERVER['REQUEST_URI'];
+    unset($_POST['commented']);
+    $comment = create('comments', $_POST);
+
+    header("Location: $currentURL");
+    exit();
+ }
 
 
 
